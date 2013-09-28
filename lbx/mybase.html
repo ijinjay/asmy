@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>{% block title %}爱尚美域{% endblock %}</title>
+	<link rel="stylesheet" href="{{STATIC_URL}}bootstrap/dist/css/bootstrap-theme.min.css"> 
+    <link rel="stylesheet" href="{{STATIC_URL}}bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}Buttons/css/buttons.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}Buttons/css/font-awesome.min.css">
+{% block css %}
+{% endblock %}
+
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js" ></script>
+	<script src = "{{STATIC_URL}}bootstrap/dist/js/bootstrap.js" type = "text/javascript"></script>
+	<script src = "{{STATIC_URL}}Buttons/js/buttons.js" type = "text/javascript"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/modal.js"></script>
+{% block front_script %}
+{% endblock %}
+</head>
+<body>
+	{% block content %}
+	{% endblock %}
+	{% block end_script %}
+	{% endblock %}
+</body>
+</html>

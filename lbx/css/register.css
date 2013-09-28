@@ -1,0 +1,19 @@
+input
+{
+   	overflow:auto; border:1px solid #468847;
+	border-radius:4pt;
+	height:27pt;
+	width:50%
+}
+
+textarea
+{
+	overflow:auto; border:1px solid #468847;
+	border-radius:4pt;
+}
+
+#newdesignerINFO
+{
+	height:100%;
+	width:100%;
+}

@@ -1,0 +1,47 @@
+
+		body
+		{
+			
+		}
+		input
+		{
+        overflow:auto; border:1px solid #468847;
+        }
+		#headcontainer
+		{
+			height:50pt;
+		}
+		#searchcontainer
+		{
+			opacity:50;
+		}
+		#memberform
+		{
+			max-width:500px;
+			
+			border:1px solid #0480BE;
+		}
+		#membertable
+		{
+			margin-left:10pt;
+		}
+		#memberConsumeTable
+		{
+			margin-left:10pt;
+		}
+		#inputAddMoney
+		{
+			border-color:#468847;
+			border-width:1px;
+			height:27pt;
+			border-top-color:#468847;
+			border-radius:4pt;
+		}
+		#user_id
+		{
+			border-color:#468847;
+			border-width:1px;
+			height:27pt;
+			border-radius:4pt;
+		}
+		

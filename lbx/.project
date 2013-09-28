@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>lbx</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.aptana.ide.core.unifiedBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.aptana.ide.project.nature.web</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Buttons</name>
+			<type>2</type>
+			<location>D:/Program Files (x86)/Apache Software Foundation/Apache2.2/htdocs/lbx/Buttons</location>
+		</link>
+		<link>
+			<name>bootstrap</name>
+			<type>2</type>
+			<location>D:/Program Files (x86)/Apache Software Foundation/Apache2.2/htdocs/lbx/bootstrap</location>
+		</link>
+		<link>
+			<name>css</name>
+			<type>2</type>
+			<location>D:/Program Files (x86)/Apache Software Foundation/Apache2.2/htdocs/lbx/css</location>
+		</link>
+	</linkedResources>
+</projectDescription>

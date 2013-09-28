@@ -1,0 +1,21 @@
+$(document).ready(function()
+{
+	$("#submitBtn").click
+	(
+		function()
+		{
+		document.getElementById("changediv").style.display="none";
+		document.getElementById("infodiv").style.display="";
+		}
+	)
+	
+	$("#changeBtn").click
+	(
+		function()
+		{
+		document.getElementById("changediv").style.display="";
+		document.getElementById("infodiv").style.display="none";
+		}
+	)
+}
+)

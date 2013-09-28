@@ -1,0 +1,33 @@
+input
+{
+    overflow:auto; 
+	border:1px solid #468847;
+	border-radius:4pt;
+	height:27pt;
+	width:60%;
+}
+textarea
+{
+	overflow:auto; border:1px solid #468847;
+	border-radius:4pt;
+}
+#designerID
+{
+	width:50%;
+}
+#designerPic
+{
+	width:100%;
+	height:100%;
+}
+#achievementPic
+{
+	height:135pt;
+}
+
+#designerINFO
+{
+	width:90%;
+	height:100%;
+	margin-left:5%;
+}

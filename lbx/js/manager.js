@@ -1,0 +1,96 @@
+$(document).ready(function()
+{
+	 $("#conbtn").mouseenter
+	 (
+	 function()
+	 {
+  	 $(this).animate(
+	 {
+	 	height:'70%',
+		width:'70%',
+	 });
+	
+     }
+	);
+	$("#conbtn").mouseleave
+	(
+	 function()
+	 {
+	  $(this).animate(
+	 {
+	 	height:'50%',
+        	width:'50%',
+	 });
+	
+     }
+	);
+	
+	 $("#empbtn").mouseenter
+	 (
+	 function()
+	 {
+  	 $(this).animate(
+	 {
+	 	height:'70%',
+        width:'70%',
+	 });
+     }
+	);
+	$("#empbtn").mouseleave
+	(
+	 function()
+	 {
+	  $(this).animate(
+	 {
+	 	height:'50%',
+        width:'50%',
+	 });
+     }
+	);
+	
+	 $("#achbtn").mouseenter
+	 (
+	 function()
+	 {
+  	 $(this).animate(
+	 {
+	 	height:'70%',
+        width:'70%',
+	 });
+     }
+	);
+	$("#achbtn").mouseleave
+	(
+	 function()
+	 {
+	  $(this).animate(
+	 {
+	 	height:'50%',
+        width:'50%',
+	 });
+     }
+	);
+	
+	 $("#helbtn").mouseenter
+	 (
+	 function()
+	 {
+  	 $(this).animate(
+	 {
+	 	height:'70%',
+        width:'70%',
+	 });
+     }
+	);
+	$("#helbtn").mouseleave
+	(
+	 function()
+	 {
+	  $(this).animate(
+	 {
+	 	height:'50%',
+        width:'50%',
+	 });
+     }
+	);
+})

@@ -1,0 +1,231 @@
+{% extends "mybase.html" %}
+{% block front_script %}	
+ <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{{STATIC_URL}}flot/excanvas.min.js"></script><![endif]-->   
+<script type="text/javascript" src="{{STATIC_URL}}flot/jquery.flot.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}flot/jquery.flot.time.js"></script>   
+<script type="text/javascript" src="{{STATIC_URL}}flot/jquery.flot.symbol.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}flot/jquery.flot.axislabels.js"></script>
+<script type="text/javascript">
+	var result={{result}};
+	var result_day = {{result_day}};
+	data1=[];
+	for (var i = 0; i <= result_day.length - 1; i++) {
+		data1.push([new Date(result_day[i][0],result_day[i][1],result_day[i][2]).getTime(),result[i]]);
+	};//data1 is the dataset
+	var dataset=[{label:"日绩",data:data1,points:{symbol:"triangle"}}];
+	options = {
+        series: {
+            lines: {
+                show: true
+            },
+            points: {
+                radius: 3,
+                fill: true,
+                show: true
+            }
+        },
+		xais:{
+			mode:'time',
+			tickSize:[1,'day'],
+			tickLength: 0,
+		    axisLabel: "日期",
+		    axisLabelUseCanvas: true,
+		    axisLabelFontSizePixels: 12,
+		    axisLabelFontFamily: 'Verdana, Arial',
+		    axisLabelPadding: 10
+		},
+		yais:{
+			axisLabel: "业绩",
+	        axisLabelUseCanvas: true,
+	        axisLabelFontSizePixels: 12,
+	        axisLabelFontFamily: 'Verdana, Arial',
+	        axisLabelPadding: 3,
+	        // tickFormatter: function (v, axis) {
+	        //     return $.formatNumber(v, { format: "#,###", locale: "us" });
+	        // }
+		},
+		legend: {
+                noColumns: 0,
+                labelBoxBorderColor: "#000000",
+                position: "nw"
+            },
+        grid: {
+            hoverable: true,
+            borderWidth: 2,
+            borderColor: "#633200",
+            backgroundColor: { colors: ["#ffffff", "#EDF5FF"] }
+        },
+        colors: ["#FF0000", "#0022FF"]
+    };
+	$(document).ready(function () {
+    	$.plot($("#flot-canvas"), dataset, options);           
+	});
+	var previousPoint=null,previousLabel=null;
+	var dayNames=['1号','2号','3号','4号','5号','6号','7号','8号','9号','10号',
+				  '11号','12号','13号','14号','15号','16号','17号','18号','19号','20号',
+				  '21号','22号','23号','24号','25号','26号','27号','28号','29号','30号','31号' ];
+	$.fn.UseTooltip = function () {
+        $(this).bind("plothover", function (event, pos, item) {
+            if (item) {
+                if ((previousLabel != item.series.label) || (previousPoint != item.dataIndex)) {
+                    previousPoint = item.dataIndex;
+                    previousLabel = item.series.label;
+                    $("#tooltip").remove();
+
+                    var x = item.datapoint[0];
+                    var y = item.datapoint[1];
+
+                    var color = item.series.color;
+                    var day = new Date(x).getDay();
+
+                    if (item.seriesIndex == 0) {
+                        showTooltip(item.pageX,
+                        item.pageY,
+                        color,
+                        "<strong>" + item.series.label + "</strong><br>" + dayNames[day] + " : <strong>" + y + "</strong>(USD)");
+                    } else {
+                        showTooltip(item.pageX,
+                        item.pageY,
+                        color,
+                        "<strong>" + item.series.label + "</strong><br>" + dayNames[day] + " : <strong>" + y + "</strong>(%)");
+                    }
+                }
+            } else {
+                $("#tooltip").remove();
+                previousPoint = null;
+            }
+        });
+    };
+    function showTooltip(x, y, color, contents) {
+        $('<div id="tooltip">' + contents + '</div>').css({
+            position: 'absolute',
+            display: 'none',
+            top: y - 40,
+            left: x - 120,
+            border: '2px solid ' + color,
+            padding: '3px',
+            'font-size': '9px',
+            'border-radius': '5px',
+            'background-color': '#fff',
+            'font-family': 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+            opacity: 0.9
+        }).appendTo("body").fadeIn(200);
+    }
+</script>
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/employee.css">
+<style type="text/css">
+	#flot-canvas {
+		width: 500px;
+		height: 400px;
+		background-color: white;
+	}
+</style>
+{% endblock %}
+{% block content %}
+{% if isCertificated %}
+	<div id="background" style="position:fixed;z-index:-1;width:100%;height:100%;top:0px;left:0px;"><img src="{{STATIC_URL}}pic/bk.jpg" width="100%" height="100%"/>
+	
+	</div>
+	<center><p style="font-size:3em;">欢迎~ {{designer.designer_ID}}号设计师,感谢您的来访</p></center>
+	<div id = "searchcontainer" class = "container" >
+	<div class="container">
+    <div class="row-fluid">
+		<div class="col-sm-6">
+             <div class="row">
+                     
+                    <div class="col-sm-12">  
+                          <div class="panel panel-primary">
+                            <div class="panel-heading">
+                              <h3 class="panel-title">个人信息</h3>
+                            </div>						  
+							 	<div class = "row" style="" id="infodiv">
+				
+                            		<div class = "col-sm-8">
+		                              	<div class = "form-group has-success">
+		                              		<label class = "control-label"style="word-break:break-all;">姓名：{{designer.name}}</label>	
+										</div>
+										<div class = "form-group has-success">
+	                              			<label class = "control-label"style="word-break:break-all;">年龄：{{designer.birth}}</label>	
+								 		</div>
+										<div class = "form-group has-success">
+											<label class = "control-label"style="word-break:break-all;">工作时段:</label>	
+										</div>									
+								 		<div class = "form-group has-success">
+	                              			<label class = "control-label"style="word-break:break-all;">是否休息：{{designer.isRest}}</label>										
+								 		</div>
+									
+										<div class = "form-group has-success">
+											<label class = "control-label"style="word-break:break-all;">薪水：{{designer.performance}}</label>
+											
+										</div>
+										<div class = "form-group has-success">
+	                              			<label class = "control-label"style="word-break:break-all;">个人简介：</label>
+											
+										</div>											
+									</div>
+									<div class = "col-sm-4">
+										<input type ="image" id="designerPic" src="{{STATIC_URL}}pic/logo.jpg">
+									</div>
+									<a href="#" class="button glow button-rounded button-flat-action btn-block " id="changeBtn"  style="width:90%;margin-left:5%;"><i class = "glyphicon glyphicon-pencil"></i> 修改设计师信息</a>
+									<p></p>
+							 	</div>
+							 </div>
+
+							 <div class ="col-sm-6" style="margin-top:1%">
+				
+							<a href="../index/" class="button glow button-rounded button-flat-action btn-block btn-lg" style="height:40pt;"><p></p><i class = "glyphicon glyphicon-home"></i>返回主界面</a>
+							</div>
+							<div class ="col-sm-6" style="margin-top:1%">
+				
+							<a href="#" class="button glow button-rounded button-flat-caution btn-block btn-lg" style="height:40pt;"><p></p><i class = "glyphicon glyphicon-remove"></i>删除该设计师</a>
+				
+							</div>
+                            </div>
+                          </div>    
+                    </div>
+					<div class = "col-sm-6">
+						<div class = "col-sm-12">
+							
+                              <div id="flot-canvas" style="margin-top:5%;">  	
+                              </div>
+						</div>
+					</div>
+             		</div>  
+                          
+					<div class = "panel panel-primary">
+					<div class = "panel-heading">
+								工作记录
+					</div>
+					<div class = "panel-body">
+					<table border="2" style="float:right" class="table">
+			
+					<thread>
+						<tr>
+							<th>日期</th>
+							<th>类型</th>
+							<th>用户ID</th>
+							<th>设计师ID</th>
+							<th>金额</th>
+						</tr>
+					</thread>
+						{% for record in Records %}
+						<tr>
+							<td>{{record.date}}</td>
+							<td>{{record.consume_type}}</td>
+							<td>{{record.user_ID}}</td>
+							<td>{{record.designer_ID}}</td>
+							<td>{{record.money}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+					</div>
+				</div>
+        </div>     
+			   
+    </div>      
+{% else %}
+	<center><p style="font-size: 40px;">你无权访问!</p></center>
+{% endif %}
+{% endblock %}

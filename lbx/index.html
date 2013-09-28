@@ -1,0 +1,67 @@
+{% extends "mybase.html" %}
+{% block front_script %}
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}js/hello.js">
+{% endblock %}
+{% block css %}
+		<style type = "text/css">
+		input
+	  {
+        overflow:auto; border:1px solid #468847;
+		border-radius:4px;
+      }
+	    body 
+      {
+      	
+      }
+
+      .form-signin {
+      	max-width: 375px;
+		padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+         background-color:#F89406;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 15px;
+           -moz-border-radius: 15px;
+                border-radius: 15px;
+        -webkit-box-shadow: 2 5px 5px rgba(0,0,0,.05);
+           -moz-box-shadow: 2 5px 5px rgba(0,0,0,.05);
+                box-shadow: 2 5px 5px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox 
+      {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] 
+      {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+		</style>
+{% endblock %}
+{% block content %}
+    	<div id="background" style="position:fixed;z-index:-1;width:100%;height:100%;top:0px;left:0px;"><img src="{{STATIC_URL}}pic/bk.jpg" width="100%" height="100%"/></div>
+       	<div class = "container" style="margin-top:10%;">
+
+    			<form class = "form-signin" action = "/my_view/" method = "post">{% csrf_token %}
+    			<h2 class = "form-signin-heading">登陆</h2>
+			    
+				<i class ="icon-user"></i>
+				<div>
+				
+				<input type = "text" class = "input-block-level" placeholder = "用户名" name = "username" style="height:25pt;width:235pt;">
+				</div>
+				<i class ="icon-lock"></i>
+				<div>
+				
+				<input type = "password" class = "input-block-level" placeholder = "密码" name = "password" style="height:25pt;width:235pt;">
+				</div>
+				<input type= "submit" name="login" class = "btn btn-block btn-primary btn-large" value = "登陆">
+			    
+			</div>
+		
+    		</form>
+{% endblock %}

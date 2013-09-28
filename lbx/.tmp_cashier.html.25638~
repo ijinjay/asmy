@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset ="GBK">
+<title></title>	
+<head>
+	<script src = "jquery/jquery-1.10.2.min.js" type = "text/javascript"></script>
+	<script src = "bootstrap/dist/js/bootstrap.js" type = "text/javascript"></script>
+	<script src = "Buttons/js/buttons.js" type = "text/javascript"></script>
+	<link href="bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="Buttons/css/buttons.css">
+	<link rel="stylesheet" href="Buttons/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/cashier.css">
+
+</head>
+<body>
+	<div id = "headcontainer" class = "container" >
+		
+	</div>
+	<div id = "searchcontainer" class = "container" >
+		<div class = "col-md-1">
+		
+		</div>
+		<div class = "col-md-4">
+			<div class = "panel panel-primary">
+				<div class = "panel-heading">
+					会员消费
+				</div>
+				
+				<table id = "membertable">
+					<tr style="line-height:250%">
+						
+						<td class = "form-group has-success">
+							<p></p>
+							<label class="control-label" id="">卡号：</label>
+							<input type="text" class = "" id ="inputID">
+							<a href="#" class="button glow button-rounded button-flat-action "><i class = "glyphicon glyphicon-search"></i> 查询</a>
+							<div>
+								<label class="control-label">姓名：</label>
+							</div>	
+							<div>
+								<label class="control-label">余额：</label>
+							</div>
+						</td>
+					</tr>
+					
+						
+						<td></td>
+					
+					
+				</table>
+				<div class = "panel-heading">
+					消费
+				</div>
+				<table id = "memberConsumeTable">
+					<tr style="line-height:250%">
+						<td class = "form-group has-success">
+							<label class="control-label">消费金额：</label>
+							<input type="text" class = "form-control" id ="inputMoney">
+							<label class="control-label">设计师编号：</label>
+							<input type="text" class = "form-control" id ="inputDesigner">
+							<label class="control-label">服务类型：</label>
+							<div class="btn-group" data-toggle="buttons">
+								  <p></p>
+								  <label class="btn btn-info" style ="width:75px">
+								    <input type="checkbox" id="membercut"> 洗剪
+								  </label>
+								  <label class="btn btn-info" style = "width:75px">
+								    <input type="checkbox" id="memberwave"> 烫发
+								  </label>
+								  <label class="btn btn-info" style = "width:75px">
+								    <input type="checkbox" id="memberdye"> 染发
+								  </label>
+							</div>
+							<p></p>
+							<a href="#" class="button glow button-rounded button-flat-action btn-block "><i class = "glyphicon glyphicon-ok"></i> 确定</a>
+							<p></p>
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+					
+				</table>
+				<div class = "panel-heading">
+					充值
+				</div>
+				<table style="margin-left:10pt">
+					<tr style="line-height:250%">
+						<td class = "form-group has-success">
+							<label class="control-label">充值：</label>
+							
+							<input type="text" class = "" id ="inputAddMoney" >
+							<a href="#" class="button glow button-rounded button-flat-action "><i class = "glyphicon glyphicon-usd"></i> 确定</a>
+							
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+		</div>
+		<div class = "col-md-1"></div>
+		<div class = "col-md-4">
+			<div class = "panel panel-primary">
+				<div class = "panel-heading">
+					非会员消费
+				</div>
+				<table style="margin-left:10pt">
+					<tr style="line-height:250%">
+						<td class = "form-group has-success">
+							<label class="control-label">消费金额：</label>
+							<input type="text" class = "form-control" id ="inputMoney">
+							<label class="control-label">设计师编号：</label>
+							<input type="text" class = "form-control" id ="inputDesigner">
+							<label class="control-label">服务类型：</label>
+							<div class="btn-group" data-toggle="buttons">
+								  <p></p>
+								  <label class="btn btn-info" style ="width:75px">
+								    <input type="checkbox"> 洗剪
+								  </label>
+								  <label class="btn btn-info" style = "width:75px">
+								    <input type="checkbox"> 烫发
+								  </label>
+								  <label class="btn btn-info" style = "width:75px">
+								    <input type="checkbox"> 染发
+								  </label>
+							</div>
+							<p></p>
+							<a href="#" class="button glow button-rounded button-flat-action btn-block "><i class = "glyphicon glyphicon-ok"></i> 确定</a>
+							<p></p>
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+			<div style="margin-top:16pt">
+				<a href="#" class="button glow button-rounded button-flat-royal btn-block btn-lg" style="height:40pt;"><p></p><i class = "glyphicon glyphicon-plus"></i>添加新会员</a>
+				
+			</div>
+			
+			<div style="margin-top:16pt">
+				
+				<a href="#" class="button glow button-rounded button-flat-action btn-block btn-lg" style="height:40pt;"><p></p><i class = "glyphicon glyphicon-home"></i>返回主界面</a>
+				
+			</div>
+			
+			<div style="margin-top:16pt">
+				
+				<a href="#" class="button glow button-rounded button-flat-caution btn-block btn-lg" style="height:40pt;"><p></p><i class = "glyphicon glyphicon-off"></i>退出</a>
+				
+			</div>
+			</div>
+		</div>	
+	
+</body>
+</html>

@@ -1,0 +1,82 @@
+{% extends "mybase.html" %}
+	{% block css %}
+	<link rel="stylesheet" href="css/register.css">
+	{%endblock%}
+{% block content %}
+	<div id="background" style="position:fixed;z-index:-1;width:100%;height:100%;top:0px;left:0px;"><img src="pic/bk.jpg" width="100%" height="100%"/></div>
+		<div class="container" style="margin-top:10pt">
+			<div class = "row">
+				<div class = "col-sm-5">
+					<div class = "panel panel-primary">
+						<div class = "panel-heading" style="height:35pt">
+							<h4>新会员注册</h4>
+						</div>
+						<div class="panel-body">
+                              	<div class = "form-group has-success">
+                              		<label class = "control-label">会员卡号：</label>
+									<input type = "text" id="newID">
+								</div>
+								<div class = "form-group has-success">
+									<label class = "control-label" style="margin-left:7%">姓名:</label>
+									<input type = "text" id="newNAME">
+								</div>
+								<div class = "form-group has-success">
+									<label class = "control-label" style="margin-left:7%">生日:</label>
+									<input type = "text" id="newBIRTHDAY">
+								</div>
+								<div class = "form-group has-success">
+									<label class = "control-label" style="margin-left:7%">手机:</label>
+									<input type = "text" id="newBIRTHDAY">
+								</div>
+								<div class = "form-group has-success">
+									<label class = "control-label">充值金额：</label>
+									<input type = "text" id="netMONEY">
+                              	</div>
+								<div>
+									<a href="#" class="button glow button-rounded button-flat-action btn-block btn-lg" style="height:35pt;"><p></p><i class = "glyphicon glyphicon-plus"></i>添加新会员</a>
+								</div> 
+					    </div>
+					</div>
+				</div>
+				
+				<div class = "col-sm-5 col-sm-offset-1">
+					<div class = "panel panel-primary">
+						<div class = "panel-heading" style="height:35pt">
+							<h4>Ìí¼ÓÐÂÉè¼ÆÊ¦</h4>
+						</div>
+						<div class="panel-body">
+                              	<div class = "form-group has-success">
+                              		<label class = "control-label" style="margin-left:7%">±àºÅ:</label>
+									<input type = "text" id="newdesignerID">
+								</div>
+								<div class = "form-group has-success">
+									<label class = "control-label" style="margin-left:7%">ÐÕÃû:</label>
+									<input type = "text" id="newdesingerNAME">
+								</div>
+								<div class = "form-group has-success">
+									<label class = "control-label" style="margin-left:7%">ÄêÁä:</label>
+									<input type = "text" id="newdesingerBIRTHDAY">
+								</div>
+								<div class = "form-group has-success">
+									<label class = "control-label" style="margin-left:7%">ÌØ³¤:</label>
+									<input type = "text" id="newdesingerBIRTHDAY">
+								</div>
+								<div class = "form-group has-success">
+									<label class = "control-label">ËùÔÚ·Öµê:</label>
+									<input type = "text" id="netdesingerMONEY">
+                              	</div>
+								<div class = "form-group has-success">
+									<label class = "control-label">¹¤×÷Ê±¼ä:</label>
+									<input type = "text" id="netdesingerMONEY">
+                              	</div>
+								<div class = "form-group has-success">
+									<label class = "control-label">¸öÈË¼ò½é:</label>
+									<textarea id = "newdesignerINFO"></textarea>
+								</div> 
+								<a href="#" class="button glow button-rounded button-flat-action btn-block btn-lg" style="height:35pt; margin-top:10pt;"><p></p><i class = "glyphicon glyphicon-plus"></i>Ìí¼ÓÐÂÉè¼ÆÊ¦</a>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

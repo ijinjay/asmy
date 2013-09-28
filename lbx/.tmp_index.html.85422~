@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset ="GBK">
+<title>Áõ</title>
+    	
+      
+       	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		
+		<!--µÇÂ½ÄÚ²¿css-->
+		<style type = "text/css">
+	    body 
+      {
+      	padding-top: 100px;
+        padding-bottom: 100px;
+        background-color:#CCFFFF;
+      }
+
+      .form-signin {
+      	max-width: 375px;
+		padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+         background-color:#F89406;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 15px;
+           -moz-border-radius: 15px;
+                border-radius: 15px;
+        -webkit-box-shadow: 2 5px 5px rgba(0,0,0,.05);
+           -moz-box-shadow: 2 5px 5px rgba(0,0,0,.05);
+                box-shadow: 2 5px 5px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox 
+      {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] 
+      {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+		</style>
+		
+    </head>
+    <body>
+       	<div class = "container">
+       		
+       		<div class = "row">
+       		
+			<div class = "span4"><!--×ó±ßµÄÍø¸ñ-->
+				
+			</div>
+			<div class = "span8"><!--ÓÒ±ßµÄÍø¸ñ-->
+    		<form class = "form-signin" action = "login.js">
+    			<h2 class = "form-signin-heading">°®ÉÐÃÀÓò</h2>
+			    
+				<i class ="icon-user"></i>
+			
+				<input type = "text" class = "input-block-level" placeholder = "ÓÃ»§Ãû">
+				
+				<i class ="icon-lock"></i>
+				<input type = "password" class = "input-block-level" placeholder = "ÃÜÂë">
+				<a class = "btn btn-block btn-primary btn-large" herf = ""><i class = "icon-ok"></i>          µÇÂ½</a>
+			    <div class = "row">
+			    	<p></p>
+			    	<div class = "span3">
+					<a class = "sign" herf = "" class = text-left>×¢²á</a>
+				    </div>
+					<div class = "span1">
+					<a class = "forget" herf = "" class = text-left>Íü¼ÇÃÜÂë£¿</a>
+					</div>
+					
+				</div>
+			</div>
+			</div>
+    		</form>
+    	</div>
+    </body>
+	<script src="jquery/jquery.min.js" type = "text/jscript"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type = "text/jscript"></script>
+</html>
